@@ -1,17 +1,17 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import NavigationBar from "./components/NavigationBar/NavigationBar";
 import Inicio from "./pages/Inicio";
 import Carta from "./pages/Carta";
 import Carrito from "./pages/Carrito";
 import Formulario from "./pages/Formulario";
+import Header from "./components/header/Header.jsx";
 
 function App() {
 
   return (
     <div className="min-h-screen bg-amber-50">
-      <NavigationBar />
+      <Header />
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/carta" element={<Carta />} />

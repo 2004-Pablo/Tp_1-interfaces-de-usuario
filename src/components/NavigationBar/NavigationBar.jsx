@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 //Ver si uso bootstrap y otra cosa y adaptar segun qué elija
+// campo nuevo
 function NavigationBar() {
   return (  
     <Navbar expand="lg" className="bg-body-tertiary">
