@@ -4,7 +4,7 @@
     background-image: url('src/assets/backgroundDeInicio.jpg'); /* Cambia esta URL por la de tu imagen */
     background-size: cover;
     background-position: center;
-    height: 85vh; 
+    height: 88vh; 
     display: flex;
     justify-content: center;
     flex-direction: column;

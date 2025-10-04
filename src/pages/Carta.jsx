@@ -1,8 +1,18 @@
 import React, { useState } from "react";
-import productos from "../data/productos";
 import ProductCard from "../components/ProductCard/ProductCard.jsx";
 
 export default function Carta() {
+  const [productos, setProductos] = useState([
+    { id: 1, nombre: "Café Espresso", precio: 4200, img: "/espresso.jpg" },
+    { id: 2, nombre: "Café Latte", precio: 6000, img: "/latte.jpg" },
+    { id: 3, nombre: "Cappuccino", precio: 4900, img: "/cappuccino.jpg" },
+    { id: 4, nombre: "Moccha", precio: 6100, img: "/moccha.jpg" },
+    { id: 5, nombre: "Té Verde", precio: 3000, img: "/te_verde.jpg" },
+    { id: 6, nombre: "Medialuna", precio: 750, img: "/medialuna.jpg" },
+    { id: 7, nombre: "Brownie", precio: 3000, img: "/brownie.jpg" },
+    { id: 8, nombre: "Sándwich Caprese", precio: 5000, img: "/sandwich.jpg" }
+  ]);
+  
   const [carrito, setCarrito] = useState([]); //Defino un Hook con useState, donde declaro
   //que el estado carrito sera un array, y la funcion para modificar dicho estado, inicio 
   // un un array vacio ya que el carrito inicialmente estará vacio
@@ -17,16 +27,20 @@ export default function Carta() {
   }
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Nuestra Carta</h2>
+    <div className="container py-4">
+      <h2 className="h3 fw-bold">Nuestra Carta</h2>
       <div className="row g-4">
         {productos.map((p) => ( //map para hacer que cada elemento de productos, se convierta en un componente ProductCard
-          <ProductCard  //Uso el componente reutilizable ProductCard ya creado  
-            className="col-12 col-sm-6 col-md-4 col-lg-3"
-            key={p.id} //Key es usado para identificar objetos distintos y optimizar renderizacion
-            producto={p} //Creo el prop producto, siendo dicha prop todo el objeto p, para todos los elementos p del array
-            onAdd={agregarAlCarrito} //Creo el prop onAdd, que cada vez que se utiliza llama a la función agregarAlCarrito
-          />
+           <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={p.id}>
+            {/*key es una propiedad especial de React que ayuda a identificar de manera 
+            única cada elemento dentro de una lista renderizada de componentes, 
+            en este caso la que se genera con el map(), lo cual permite que React
+            identifique que elementos cambiaron, se agregaron o eliminaron se manera eficiente*/ }
+            <ProductCard //Uso el componente reutilizable ProductCard ya creado 
+              producto={p} //Creo el prop producto, siendo dicha prop todo el objeto p, para todos los elementos p del array
+              onAdd={agregarAlCarrito} //Creo el prop onAdd, que cada vez que se utiliza llama a la función agregarAlCarrito
+            />
+          </div>           
         ))}
       </div>
     </div>

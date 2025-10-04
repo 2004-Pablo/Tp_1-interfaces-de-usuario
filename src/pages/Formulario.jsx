@@ -1,48 +1,96 @@
 import React, { useState } from "react";
 
 export default function Formulario() {
-  const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const [form, setForm] = useState({nombre: "", mail: "", dia: "", hora: "", mensaje: ""})
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    alert("El Formulario se ha enviado");
+    setForm({ nombre: "", mail: "", dia: "", hora: "", mensaje: "" });
+    console.log(nombre)
+  }
+
+    const handleNombreInput = (e) => {
+    setForm({ ...form, nombre: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Consulta enviada ✅");
-    setForm({ nombre: "", email: "", mensaje: "" });
+    const handleMailInput = (e) => {
+    setForm({ ...form, mail: e.target.value });
+  };
+
+    const handleDiaInput = (e) => {
+    setForm({ ...form, dia: e.target.value });
+  };
+
+    const handleHoraInput = (e) => {
+    setForm({ ...form, hora: e.target.value });
+  };
+
+    const handleMensajeInput = (e) => {
+    setForm({ ...form, mensaje: e.target.value });
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Contacto / Reservas</h2>
-      <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-        <input
-          name="nombre"
-          value={form.nombre}
-          onChange={handleChange}
-          placeholder="Nombre"
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="Email"
-          className="w-full p-2 border rounded"
-        />
-        <textarea
-          name="mensaje"
-          value={form.mensaje}
-          onChange={handleChange}
-          placeholder="Mensaje / Reserva"
-          className="w-full p-2 border rounded"
-        />
-        <button type="submit" className="bg-amber-500 text-white px-4 py-2 rounded">
-          Enviar
-        </button>
-      </form>
+    <div className="">
+      <div className="">
+        <h1>Contacto y Reservas</h1>
+        <p className="">
+          ¿Querés hacer una reserva o tenés alguna consulta? 
+          Completa el formulario y nos pondremos en contacto contigo.
+        </p>
+      </div>
+
+      <div>
+        <h2>Formulario de Reserva</h2>
+        <form onSubmit={handleSubmit} className="">
+          <fieldset>
+            <label htmlFor="nombre">Nombre Completo: </label>
+            <input
+              type="text"
+              id="nombre"
+              onChange={handleNombreInput}
+              value={form.nombre}
+            />
+          </fieldset>
+          <fieldset>
+            <label htmlFor="mail">Email </label>
+            <input
+              type="email"
+              id="mail"
+              onChange={handleMailInput}
+              value={form.mail}
+            />
+          </fieldset>
+          <fieldset>
+            <label htmlFor="diaReserva">Fecha de la reserva </label>
+            <input
+              type="date"
+              id="diaReserva"
+              onChange={handleDiaInput}
+              value={form.dia}
+            />
+          </fieldset>
+          <fieldset>
+            <label htmlFor="horaReserva">Hora de la reserva </label>
+            <input
+              type="time"
+              id="horaReserva"
+              onChange={handleHoraInput}
+              value={form.hora}
+            />
+          </fieldset>
+          <fieldset>
+            <label htmlFor="mensaje">Mensaje o detalles de la reserva </label>
+            <textarea
+              id="mensaje"
+              onChange={handleMensajeInput}
+              value={form.mensaje}
+            />
+          </fieldset>
+          <button>Enviar Reserva</button>
+        </form>
+      </div>
     </div>
   );
 }

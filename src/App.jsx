@@ -6,6 +6,7 @@ import Carta from "./pages/Carta";
 import Carrito from "./pages/Carrito";
 import Formulario from "./pages/Formulario";
 import Header from "./components/header/Header.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/formulario" element={<Formulario />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
