@@ -15,9 +15,9 @@ export default function ProductCard({ producto, onAdd }) {
         //height es para que todas las imagenes tengan una altura fija de 200px
         //sin importar su tamanio original
       />
-      <div className="card-body d-flex flex-column">
+       <div className={`card-body d-flex flex-column ${styles.miEstiloTarjeta}`}>
         <h5 className="card-title">{producto.nombre}</h5>
-        <p className="card-text text-muted">${producto.precio}</p>
+        <p className="card-text">${producto.precio}</p>
         <button
           className="btn btn-primary mt-auto"
           onClick={() => onAdd(producto)}

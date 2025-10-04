@@ -1,0 +1,23 @@
+/*Mi estilo personalizado para cada tarjeta*/
+.miEstiloTarjeta {
+  background-image: url("/fondoCard.jpg");
+  background-size: cover; /*cubrir el fondo con la img*/
+  background-position: center; /*centra la imagen de fondo*/
+  background-repeat: no-repeat; /*La img no se repite como un mosaico de fondo*/
+  color: #000000;
+}
+
+/* Nombre del producto */
+.miEstiloTarjeta h5 {
+  font-size: 1.2rem;     /* aumenta el tamaño del texto */
+  font-weight: 800;      /* negrita fuerte */
+  margin-bottom: 8px;
+}
+
+/* Precio del producto */
+.miEstiloTarjeta p {
+  font-size: 1.4rem;       /* tamaño un poco más grande */
+  font-weight: 650;      /* semi-negrita */
+  margin-bottom: 10px;
+}
+
