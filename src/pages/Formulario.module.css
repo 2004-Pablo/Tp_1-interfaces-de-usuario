@@ -81,7 +81,7 @@
 /* Botón */
 .submitButton {
   width: 100%;
-  background-color: #e87722;
+  background-color: #5e3211;
   color: #fff;
   font-weight: 600;
   padding: 12px;
@@ -92,7 +92,7 @@
 }
 
 .submitButton:hover {
-  background-color: #cf6b1e;
+  background-color: #56cf1e;
 }
 
 /* Mensajes */
