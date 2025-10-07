@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormLabel, Form, FormControl, FormGroup } from "react-bootstrap";
+import styles from "./Formulario.module.css";
+
 
 export default function Formulario() {
 
@@ -48,80 +50,85 @@ export default function Formulario() {
   }
 
   return (
-    <div className="">
-      <div className="">
-        <h1>Contacto y Reservas</h1>
-        <p className="">
-          ¿Querés hacer una reserva o tenés alguna consulta? 
-          Completa el formulario y nos pondremos en contacto contigo.
-        </p>
+  <div className={styles.formContainer}>
+    <h1 className={styles.formTitle}>Contacto y Reservas</h1>
+    <p className={styles.formDescription}>
+      ¿Querés hacer una reserva o tenés alguna consulta?
+      Completa el formulario y nos pondremos en contacto contigo.
+    </p>
+
+    <h2 className={styles.sectionTitle}>Formulario de Reserva</h2>
+    <p className={styles.requiredText}>Todos los campos son obligatorios</p>
+
+    <Form onSubmit={handleSubmit}>
+      <FormGroup>
+        <FormLabel className={styles.label}>Nombre completo</FormLabel>
+        <FormControl
+          className={styles.input}
+          type="text"
+          name="nombre"
+          placeholder="Tu nombre completo"
+          value={form.nombre}
+          onChange={handleFormInput}
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <FormLabel className={styles.label}>Email</FormLabel>
+        <FormControl
+          className={styles.input}
+          type="email"
+          name="mail"
+          placeholder="tu@email.com"
+          value={form.mail}
+          onChange={handleFormInput}
+        />
+      </FormGroup>
+
+      <div style={{ display: "flex", gap: "10px" }}>
+        <FormGroup style={{ flex: 1 }}>
+          <FormLabel className={styles.label}>Fecha de la reserva</FormLabel>
+          <FormControl
+            className={styles.input}
+            type="date"
+            name="dia"
+            value={form.dia}
+            onChange={handleFormInput}
+          />
+        </FormGroup>
+
+        <FormGroup style={{ flex: 1 }}>
+          <FormLabel className={styles.label}>Hora de la reserva</FormLabel>
+          <FormControl
+            className={styles.input}
+            type="time"
+            name="hora"
+            value={form.hora}
+            onChange={handleFormInput}
+          />
+        </FormGroup>
       </div>
 
-      <div>
-        <h2>Formulario de Reserva</h2>
-        <Form onSubmit={handleSubmit} className="">
-          <FormGroup>
-            <FormLabel htmlFor="nombreForm">Nombre Completo: </FormLabel>
-            <FormControl
-              type="text"
-              name="nombre"
-              id="nombreForm"
-              placeholder="Nombre"
-              onChange={handleFormInput}
-              value={form.nombre}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel htmlFor="mailForm">Email </FormLabel>
-            <FormControl
-              type="email"
-              name="mail"
-              id="mailForm"
-              placeholder="Email"
-              onChange={handleFormInput}
-              value={form.mail}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel htmlFor="diaReservaForm">Fecha de la reserva </FormLabel>
-            <FormControl
-              type="date"
-              name="dia"
-              id="diaReservaForm"
-              min="2025-01-01"
-              max="2025-12-31"
-              value={form.dia} // Problema para mostrar
-              onChange={handleFormInput}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel htmlFor="horaReservaForm">Hora de la reserva </FormLabel>
-            <FormControl
-              type="time"
-              name="hora"
-              id="horaReservaForm"
-              min="15:00"
-              max="19:00"
-              onChange={handleFormInput}
-              value={form.hora}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel htmlFor="mensajeForm">Mensaje o Detalles de la reserva </FormLabel>
-            <textarea
-              name="mensaje"
-              id="mensajeForm"
-              placeholder="Cuéntanos sobre tu reserva: número de personas, ocasión especial, preferencias alimentarias, etc."
-              rows={4}
-              onChange={handleFormInput}
-              value={form.mensaje}
-            />
-          </FormGroup>          
-          <Button variant="success" type="submit">Enviar Reserva</Button>
-          {error && <p style={{color:'red'}}>{error}</p>}
-          {valido && <p style={{color:'green'}}>El Formulario se envío exitosamente.</p>}
-        </Form>
-      </div>
-    </div>
+      <FormGroup>
+        <FormLabel className={styles.label}>Mensaje o detalles de la reserva</FormLabel>
+        <textarea
+          className={styles.textarea}
+          name="mensaje"
+          rows={4}
+          placeholder="Cuéntanos sobre tu reserva..."
+          value={form.mensaje}
+          onChange={handleFormInput}
+        />
+      </FormGroup>
+
+      <Button className={styles.submitButton} type="submit">
+        Enviar
+      </Button>
+
+      {error && <p className={styles.errorMessage}>{error}</p>}
+      {valido && <p className={styles.successMessage}>El formulario se envió exitosamente ✅</p>}
+    </Form>
+  </div>
+
   );
 }
