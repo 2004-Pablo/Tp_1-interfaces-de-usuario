@@ -18,27 +18,34 @@ export default function Carrito({ carrito, setCarrito }) {
   const total = carrito.reduce((acc, item) => { acc + (item.precio * item.cantidad) }, 0)
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Tu Carrito</h2>
+    <div className="container py-4">
+      <h2 className="h3 fw-bold mb-4">Tu Carrito</h2>
       {carrito.length === 0 ? (
-        <p>No has agregado productos aún.</p>
+        <div className="text-center py-5">
+          <p className="fs-5 text-muted">No has agregado productos aún.</p>
+          <p className="text-muted">¡Visita nuestra carta para agregar productos!</p>
+        </div>
       ) : (
         <>
-          {carrito.map((item) => (
-            <CartItem
-              key={item.id}
-              item={item}
-              onDelete={eliminar}
-              onUpdate={actualizarCantidad}
-            />
-          ))}
-          <h3 className="text-xl font-semibold mt-4">Total: ${total}</h3>
-          <button
-            onClick={() => alert("Pedido confirmado ✅")}
-            className="bg-green-600 text-white px-4 py-2 rounded mt-2"
-          >
-            Confirmar pedido
-          </button>
+          <div className="mb-4">
+            {carrito.map((item) => (
+              <CartItem
+                key={item.id}
+                item={item}
+                onDelete={eliminar}
+                onUpdate={actualizarCantidad}
+              />
+            ))}
+          </div>
+          <div className="d-flex justify-content-between align-items-center p-3 bg-light rounded">
+            <h3 className="h4 mb-0">Total: ${total}</h3>
+            <button
+              onClick={() => alert("Pedido confirmado ✅")}
+              className="btn btn-success btn-lg"
+            >
+              Confirmar pedido
+            </button>
+          </div>
         </>
       )}
     </div>

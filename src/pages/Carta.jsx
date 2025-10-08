@@ -1,30 +1,23 @@
 import React, { useState } from "react";
 import ProductCard from "../components/ProductCard/ProductCard.jsx";
 
-export default function Carta() {
+export default function Carta({ onAdd }) {
+
+  //Declaración inicial de los productos como un array de objetos
   const [productos, setProductos] = useState([
     { id: 1, nombre: "Café Espresso", precio: 4200, img: "/espresso.jpg" },
     { id: 2, nombre: "Café Latte", precio: 6000, img: "/latte.jpg" },
     { id: 3, nombre: "Cappuccino", precio: 4900, img: "/cappuccino.jpg" },
     { id: 4, nombre: "Moccha", precio: 6100, img: "/moccha.jpg" },
     { id: 5, nombre: "Té Verde", precio: 3000, img: "/te_verde.jpg" },
-    { id: 6, nombre: "Medialuna", precio: 750, img: "/medialuna.jpg" },
+    { id: 6, nombre: "Té Negro", precio: 2100, img: "/teNegro.jpg" },
     { id: 7, nombre: "Brownie", precio: 3000, img: "/brownie.jpg" },
-    { id: 8, nombre: "Sándwich Caprese", precio: 5000, img: "/sandwich.jpg" }
+    { id: 8, nombre: "Sándwich Caprese", precio: 5000, img: "/sandwich.jpg" },
+    { id: 9, nombre: "Waffle de Frutos Rojos", precio: 7500, img: "/waffle.jpg" },
+    { id: 10, nombre: "Tostado de J&Q", precio: 6800, img: "/tostado.jpg" },
+    { id: 11, nombre: "Cookies c/ Chips de Chocolate", precio: 3500, img: "/cookie.jpg" },
+    { id: 12, nombre: "Medialuna", precio: 750, img: "/medialuna.jpg" },
   ]);
-  
-  const [carrito, setCarrito] = useState([]); //Defino un Hook con useState, donde declaro
-  //que el estado carrito sera un array, y la funcion para modificar dicho estado, inicio 
-  // un un array vacio ya que el carrito inicialmente estará vacio
-
-  function agregarAlCarrito(producto) {
-    setCarrito([...carrito, producto]);
-    //1)Utilizo el operador de propagacion, que crea una copia del array carrito y coloca
-    //todos sus elementos dentro del nuevo array
-    //2)Debo utilizar dicho operador ya que el estado debe ser inmutable, al crear un
-    //nuevo array con el operador de propagacion, se sabe que el estado ha cambiado ya que
-    //es un nuevo objeto (tiene que ver con el rendimiento/renderizado)
-  }
 
   return (
     <div className="container py-4">
@@ -38,7 +31,7 @@ export default function Carta() {
             identifique que elementos cambiaron, se agregaron o eliminaron se manera eficiente*/ }
             <ProductCard //Uso el componente reutilizable ProductCard ya creado 
               producto={p} //Creo el prop producto, siendo dicha prop todo el objeto p, para todos los elementos p del array
-              onAdd={agregarAlCarrito} //Creo el prop onAdd, que cada vez que se utiliza llama a la función agregarAlCarrito
+              onAdd={onAdd} //Creo el prop onAdd, que cada vez que se utiliza llama a la función onAdd recibida desde App
             />
           </div>           
         ))}

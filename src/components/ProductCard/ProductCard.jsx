@@ -1,19 +1,16 @@
 import React from "react";
 import styles from "./ProductCard.module.css";
 
-//producto y onAdd son props que vienen de Carta
+// producto y onAdd son props que vienen de Carta
+// producto: objeto con datos de cada producto
+// onAdd: función que maneja el evento de "agregar al carrito"
 export default function ProductCard({ producto, onAdd }) {
   return (
-    <div id="tarjeta" className="card shadow-sm h-100">
+    <div /*id="tarjeta"*/ className="card shadow-sm h-100">
       <img
         src={producto.img}
         alt={producto.nombre}
-        className="card-img-top"
-        style={{ objectFit: "cover", height: "200px" }}
-        //objectFit: "cover" hace que la imagen rellene el espacio 
-        //disponible sin perder proporcion
-        //height es para que todas las imagenes tengan una altura fija de 200px
-        //sin importar su tamanio original
+        className={`card-img-top ${styles.imagenProducto}`}
       />
        <div className={`card-body d-flex flex-column ${styles.miEstiloTarjeta}`}>
         <h5 className="card-title">{producto.nombre}</h5>

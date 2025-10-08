@@ -1,96 +1,134 @@
 import React, { useState } from "react";
+import { Button, FormLabel, Form, FormControl, FormGroup } from "react-bootstrap";
+import styles from "./Formulario.module.css";
+
 
 export default function Formulario() {
 
   const [form, setForm] = useState({nombre: "", mail: "", dia: "", hora: "", mensaje: ""})
 
+  const [error, setError] = useState("")
+
+  const [valido, setValido] = useState(false)
+
   const handleSubmit = (e) =>{
     e.preventDefault();
-    alert("El Formulario se ha enviado");
-    setForm({ nombre: "", mail: "", dia: "", hora: "", mensaje: "" });
-    console.log(nombre)
+    
+    if (!form.nombre.trim()){
+      setError("El nombre es obligatorio.")
+      setValido(false)
+      return
+    }
+    if (!form.mail.trim()){
+      setError("El email es obligatorio.")
+      setValido(false)
+      return
+    }
+    if (form.dia == ""){
+      setError("La fecha es obligatoria.")
+      setValido(false)
+      return
+    }
+    if (form.hora == ""){
+      setError("La hora es obligatoria.")
+      setValido(false)
+      return
+    }
+    if (!form.mensaje.trim()){
+      setError("Los detalles de la reserva son obligatorios.")
+      setValido(false)
+      return
+    }
+    setError("")
+    setValido(true)
+    setForm({ nombre: "", mail: "", dia: "", hora: "", mensaje: "" }) 
   }
 
-    const handleNombreInput = (e) => {
-    setForm({ ...form, nombre: e.target.value });
-  };
-
-    const handleMailInput = (e) => {
-    setForm({ ...form, mail: e.target.value });
-  };
-
-    const handleDiaInput = (e) => {
-    setForm({ ...form, dia: e.target.value });
-  };
-
-    const handleHoraInput = (e) => {
-    setForm({ ...form, hora: e.target.value });
-  };
-
-    const handleMensajeInput = (e) => {
-    setForm({ ...form, mensaje: e.target.value });
-  };
+  const handleFormInput = (e) => {
+    const { name, value } = e.target
+    setForm({...form, [name] : value })
+  }
 
   return (
-    <div className="">
-      <div className="">
-        <h1>Contacto y Reservas</h1>
-        <p className="">
-          ¿Querés hacer una reserva o tenés alguna consulta? 
-          Completa el formulario y nos pondremos en contacto contigo.
-        </p>
+  <div className={styles.formContainer}>
+    <h1 className={styles.formTitle}>Contacto y Reservas</h1>
+    <p className={styles.formDescription}>
+      ¿Querés hacer una reserva o tenés alguna consulta?
+      Completa el formulario y nos pondremos en contacto contigo.
+    </p>
+
+    <h2 className={styles.sectionTitle}>Formulario de Reserva</h2>
+    <p className={styles.requiredText}>Todos los campos son obligatorios</p>
+
+    <Form onSubmit={handleSubmit}>
+      <FormGroup>
+        <FormLabel className={styles.label}>Nombre completo</FormLabel>
+        <FormControl
+          className={styles.input}
+          type="text"
+          name="nombre"
+          placeholder="Tu nombre completo"
+          value={form.nombre}
+          onChange={handleFormInput}
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <FormLabel className={styles.label}>Email</FormLabel>
+        <FormControl
+          className={styles.input}
+          type="email"
+          name="mail"
+          placeholder="tu@email.com"
+          value={form.mail}
+          onChange={handleFormInput}
+        />
+      </FormGroup>
+
+      <div style={{ display: "flex", gap: "10px" }}>
+        <FormGroup style={{ flex: 1 }}>
+          <FormLabel className={styles.label}>Fecha de la reserva</FormLabel>
+          <FormControl
+            className={styles.input}
+            type="date"
+            name="dia"
+            value={form.dia}
+            onChange={handleFormInput}
+          />
+        </FormGroup>
+
+        <FormGroup style={{ flex: 1 }}>
+          <FormLabel className={styles.label}>Hora de la reserva</FormLabel>
+          <FormControl
+            className={styles.input}
+            type="time"
+            name="hora"
+            value={form.hora}
+            onChange={handleFormInput}
+          />
+        </FormGroup>
       </div>
 
-      <div>
-        <h2>Formulario de Reserva</h2>
-        <form onSubmit={handleSubmit} className="">
-          <fieldset>
-            <label htmlFor="nombre">Nombre Completo: </label>
-            <input
-              type="text"
-              id="nombre"
-              onChange={handleNombreInput}
-              value={form.nombre}
-            />
-          </fieldset>
-          <fieldset>
-            <label htmlFor="mail">Email </label>
-            <input
-              type="email"
-              id="mail"
-              onChange={handleMailInput}
-              value={form.mail}
-            />
-          </fieldset>
-          <fieldset>
-            <label htmlFor="diaReserva">Fecha de la reserva </label>
-            <input
-              type="date"
-              id="diaReserva"
-              onChange={handleDiaInput}
-              value={form.dia}
-            />
-          </fieldset>
-          <fieldset>
-            <label htmlFor="horaReserva">Hora de la reserva </label>
-            <input
-              type="time"
-              id="horaReserva"
-              onChange={handleHoraInput}
-              value={form.hora}
-            />
-          </fieldset>
-          <fieldset>
-            <label htmlFor="mensaje">Mensaje o detalles de la reserva </label>
-            <textarea
-              id="mensaje"
-              onChange={handleMensajeInput}
-              value={form.mensaje}
-            />
-          </fieldset>
-          <button>Enviar Reserva</button>
-        </form>
-      </div>
-    </div>
+      <FormGroup>
+        <FormLabel className={styles.label}>Mensaje o detalles de la reserva</FormLabel>
+        <textarea
+          className={styles.textarea}
+          name="mensaje"
+          rows={4}
+          placeholder="Cuéntanos sobre tu reserva..."
+          value={form.mensaje}
+          onChange={handleFormInput}
+        />
+      </FormGroup>
+
+      <Button className={styles.submitButton} type="submit">
+        Enviar
+      </Button>
+
+      {error && <p className={styles.errorMessage}>{error}</p>}
+      {valido && <p className={styles.successMessage}>El formulario se envió exitosamente ✅</p>}
+    </Form>
+  </div>
+
   );
 }

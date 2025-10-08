@@ -1,23 +1,30 @@
 /*Mi estilo personalizado para cada tarjeta*/
 .miEstiloTarjeta {
   background-image: url("/fondoCard.jpg");
-  background-size: cover; /*cubrir el fondo con la img*/
-  background-position: center; /*centra la imagen de fondo*/
-  background-repeat: no-repeat; /*La img no se repite como un mosaico de fondo*/
+  background-size: cover; /* cubre el fondo de la tarjeta con la img */
+  background-position: center; /* centra la imagen de fondo */
+  background-repeat: no-repeat; /* la img de fondo de tarjeta no se repite como un mosaico */
   color: #000000;
+}
+
+/* Imagen del producto */
+.imagenProducto {
+  object-fit: cover; /* hace que la imagen rellene el espacio disponible sin perder proporcion */
+  height: 200px; /* para que todas las imagenes tengan una altura fija sin importar su tamanio original */
 }
 
 /* Nombre del producto */
 .miEstiloTarjeta h5 {
-  font-size: 1.2rem;     /* aumenta el tamaño del texto */
-  font-weight: 800;      /* negrita fuerte */
+  font-size: 1.2rem;     
+  font-weight: 800;      
   margin-bottom: 8px;
 }
 
 /* Precio del producto */
 .miEstiloTarjeta p {
-  font-size: 1.4rem;       /* tamaño un poco más grande */
-  font-weight: 650;      /* semi-negrita */
+  font-size: 1.4rem;       
+  font-weight: 650;     
   margin-bottom: 10px;
 }
+
 
