@@ -1,5 +1,5 @@
 import React from "react";
-import CartItem from "../components/CartItem/CartItem";
+import CartItem from "../../components/CartItem/CartItem";
 
 //Página que muestra el carrito
 export default function Carrito({ carrito, setCarrito }) {
@@ -15,7 +15,7 @@ export default function Carrito({ carrito, setCarrito }) {
     );
   };
 
-  const total = carrito.reduce((acc, item) => { acc + (item.precio * item.cantidad) }, 0)
+  const total = carrito.reduce((acc, item) =>  acc + (item.precio * item.cantidad) , 0)
 
   return (
     <div className="container py-4">

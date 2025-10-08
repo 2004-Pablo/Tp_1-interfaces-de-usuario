@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import Inicio from "./pages/Inicio";
-import Carta from "./pages/Carta";
-import Carrito from "./pages/Carrito";
-import Formulario from "./pages/Formulario";
+import Inicio from "./pages/Inicio/Inicio.jsx";
+import Carta from "./pages/Carta/Carta.jsx";
+import Carrito from "./pages/Carrito/Carrito.jsx";
+import Formulario from "./pages/Formulario/Formulario.jsx";
+import Nosotros from "./pages/Nosotros/Nosotros.jsx";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/footer/Footer.jsx";
 
@@ -37,9 +38,10 @@ function App() {
         <Route path="/carta" element={<Carta onAdd={agregarAlCarrito} />} />
         <Route path="/carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
         <Route path="/formulario" element={<Formulario />} />
+        <Route path="/nosotros" element={<Nosotros/>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }

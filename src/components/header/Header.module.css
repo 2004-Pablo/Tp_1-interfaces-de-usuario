@@ -1,20 +1,27 @@
-.headerContainer{
-    background-color: #DCBB7E;
-    height: 12vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    margin: 0px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-    font-size: 15px;
+.headerContainer {
+  background-color: #3a2210;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.tittlePage{
-    color: rgb(0, 0, 0);
-    font-family: 'monospace';
-    font-size: 2.6em;
-    font-weight: 900;
+/* Imagen del logo */
+.logoImage {
+  height: 70px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+/* Quita el subrayado del link y ajusta alineación */
+.logoLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }

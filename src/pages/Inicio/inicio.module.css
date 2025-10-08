@@ -1,0 +1,59 @@
+.containerInicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #6b3e26 0%, #a26232 100%);
+  padding: 60px 80px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  max-width: 1200px;
+  margin: 80px auto;
+  gap: 40px;
+}
+
+.textSection {
+  flex: 1;
+  max-width: 600px;
+}
+
+.subTitulo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.textDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.buttomCard {
+  background-color: #fff;
+  color: #5a3216;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttomCard:hover {
+  background-color: #5a3216;
+  color: #fff;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer img {
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}

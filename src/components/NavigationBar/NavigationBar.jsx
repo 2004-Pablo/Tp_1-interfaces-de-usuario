@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 //Ver si uso bootstrap y otra cosa y adaptar segun qué elija
 // <Navbar.Brand as={Link} to="/">Unahur</Navbar.Brand>
@@ -18,6 +17,7 @@ function NavigationBar() {
             <Nav.Link as={NavLink} to="/carta">Carta</Nav.Link>
             <Nav.Link as={NavLink} to="/carrito">Carrito</Nav.Link>
             <Nav.Link as={NavLink} to="/formulario">Formulario</Nav.Link>
+            <Nav.Link as={NavLink} to="/nosotros">Nosotros</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
