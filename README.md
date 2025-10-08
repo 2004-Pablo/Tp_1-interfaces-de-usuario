@@ -1,12 +1,73 @@
-# React + Vite
+# Trabajo Práctico Numero 1
+# Materia: Construccion de interfaces de usuario
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un **frontend** desarrollado en **React** para una **Cafeteria**, como parte de un trabajo práctico. La aplicación permite visualizar el inicio de la pagina, la carta con los productos, el carrito de compras donde se almacenan los pedidios, un formulario de contactos y la pagina con la informacion de la cafeteria.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Catálogo de productos**: Lista de productos con detalles clave.
+- **Detalle del producto**: Información completa de un producto seleccionado.
+- **Navegación intuitiva**: Sistema de rutas para moverse entre las secciones.
+- **Estilos responsivos**: Implementados con frameworks CSS para adaptarse a dispositivos móviles y de escritorio.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologías utilizadas
+
+- **React**: Biblioteca principal para la creación de componentes.
+- **Vite**: Herramienta de construcción rápida para React.
+- **React-bootstrap**: Framework CSS para estilos.
+- **React Router**: Para la navegación entre rutas.
+
+---
+
+## ⚙️ Requisitos previos
+
+Antes de ejecutar la aplicación, asegúrate de tener instalado:
+
+- **Node.js** (versión 16 o superior).
+- **npm** o **yarn** para la gestión de paquetes.
+
+---
+
+## 🔧 Instalación y ejecución
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/Martincito4k/TrabajoPracticoFrontendDeReact.git
+
+2. **Navega al directorio del proyecto**:
+
+    ```bash
+    cd TrabajoPracticoFrontendDeReact
+
+3. **Instala las dependencias**:
+    ```bash
+    npm install
+
+4. **Inicia la aplicación**:
+    ```bash
+    npm run dev
+
+5. **Abre en tu navegador**:
+    Visita http://localhost:5173 para ver la aplicación.
+
+## 🔧 Backend utilizado:
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/CIU-UnaHur/tp-backend.git
+
+1. **Instala las dependencias**:
+    ```bash
+    npm install
+
+2. **Inicia la aplicación**:
+    ```bash
+    npm run dev
+
+
+## 🧑‍💻 Autores
+**Desarrollado por: Pablo Cortese, Lautaro Diaz Blas, Marcos Bejarano, Matias Lopez, Fernando Folcher**
+
+Desarrollado como parte de un trabajo práctico universitario.
