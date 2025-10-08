@@ -6,26 +6,26 @@ export default function Footer() {
     <footer className={style.footerContainer}>
         <div className={style.boxLinks}>
             <h3>Negocio</h3>
-            <ul className={""}>
-                <li className={""}></li>
-                <li className={""}></li>
-                <li className={""}></li>
+            <ul>
+                <li>Trabaja con nosotros</li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
         <div className={style.boxLinks}>
             <h3>Ayuda</h3>
-            <ul className={""}>
-                <li className={""}></li>
-                <li className={""}></li>
-                <li className={""}></li>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
         <div className={style.boxLinks}>
             <h3>Redes Sociales</h3>
-            <ul className={""}>
-                <li className={""}></li>
-                <li className={""}></li>
-                <li className={""}></li>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
             
         </div>
