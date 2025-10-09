@@ -20,14 +20,6 @@ export default function Carta({ onAdd }) {
   ]);
 
   const [filtro, setFiltro] = useState("Todos");
-  function agregarAlCarrito(producto) {
-    setCarrito([...carrito, producto]);
-    //1)Utilizo el operador de propagacion, que crea una copia del array carrito y coloca
-    //todos sus elementos dentro del nuevo array + el nuevo producto
-    //2)Debo utilizar dicho operador ya que el estado debe ser inmutable, al crear un
-    //nuevo array con el operador de propagacion, se sabe que el estado ha cambiado ya que
-    //es un nuevo objeto (tiene que ver con el rendimiento/renderizado)
-  }
 
   //Operador ternario
   const productosFiltrados = 

@@ -6,7 +6,7 @@ import styles from "./ProductCard.module.css";
 // onAdd: función que maneja el evento de "agregar al carrito"
 export default function ProductCard({ producto, onAdd }) {
   return (
-    <div /*id="tarjeta"*/ className="card shadow-sm h-100">
+    <div className="card shadow-sm h-100">
       <img
         src={producto.img}
         alt={producto.nombre}

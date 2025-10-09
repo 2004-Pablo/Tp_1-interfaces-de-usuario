@@ -8,7 +8,6 @@ export default function Logo() {
             <NavLink to= "/">
                 <img src="LogoPrincipalSinFondo.png" alt="" width="50" height="50"/>
             </NavLink>
-            <p>Luna & Granos Café</p>
         </div>
     </nav>
   )
