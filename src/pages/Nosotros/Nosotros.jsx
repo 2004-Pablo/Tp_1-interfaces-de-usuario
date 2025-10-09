@@ -1,10 +1,10 @@
-import React from 'react';
+import style from './Nosotros.module.css'
 //import './Nosotros.css'; 
 
 const Nosotros = () => {
 return (
     /*Las clases row y container facilitan el diseño responsivo*/
-    <div className="container py-5"> {/*Contenedor con ancho max y py = padding*/}
+    <div className={style.aboutUsContainer}> {/*Contenedor con ancho max y py = padding*/}
       <h2 className="text-center">Sobre Nosotros</h2>
       <p className="lead text-center">Conoce más acerca de Luna & Granos Café, nuestra historia, valores y el equipo que hace todo esto posible.</p>
 

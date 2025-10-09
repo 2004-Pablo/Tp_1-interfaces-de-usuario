@@ -1,0 +1,14 @@
+.aboutUsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid #000;
+    border-radius: 12px;
+    margin: 50px auto;
+    width: 80%;
+    text-align: center;
+    background: linear-gradient(135deg, #6b3e26 0%, #a26232 100%);
+    color: #fff;
+}
