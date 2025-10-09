@@ -7,7 +7,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Imagen del logo */
 .logoImage {
   height: 70px;
   width: auto;
@@ -19,7 +18,6 @@
   transform: scale(1.05);
 }
 
-/* Quita el subrayado del link y ajusta alineación */
 .logoLink {
   text-decoration: none;
   display: flex;

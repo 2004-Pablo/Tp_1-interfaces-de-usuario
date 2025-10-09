@@ -5,19 +5,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import Badge from 'react-bootstrap/Badge';
 import styles from "./NavigationBar.module.css";
 
-//Ver si uso bootstrap y otra cosa y adaptar segun qué elija
-// <Navbar.Brand as={Link} to="/">Unahur</Navbar.Brand>
 function NavigationBar({ carrito }) {
   // Calcular total de productos en el carrito
   const totalProductos = carrito ? carrito.reduce((total, item) => total + item.cantidad, 0) : 0;
   
   return (  
     /*Componentes de react-bootstrap*/
-    <Navbar expand="lg" /*className="bg-body-tertiary"*/>
+    <Navbar expand="lg" >
       <Container>      
-        <Navbar.Toggle /*aria-controls="basic-navbar-nav"*/ />
-        <Navbar.Collapse /*id="basic-navbar-nav"*/>
-          <Nav /*className="me-auto"*/>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Nav>
             <Nav.Link as={NavLink} to="/" className={styles.navLink}>Inicio</Nav.Link>
             <Nav.Link as={NavLink} to="/carta" className={styles.navLink}>Carta</Nav.Link>
             <Nav.Link as={NavLink} to="/carrito" className={styles.navLink}>

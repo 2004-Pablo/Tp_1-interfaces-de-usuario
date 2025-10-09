@@ -1,28 +1,25 @@
-/* NavigationBar.module.css */
 .navbar {
-  /*background-color: #2e3b4e;*/ /* Color de fondo oscuro */
-  padding: 10px 0; /* Espaciado vertical */
+  padding: 10px 0;
 }
 
 .navLinks {
   display: flex;
-  justify-content: flex-end; /* Alinear los enlaces a la derecha */
+  justify-content: flex-end;
 }
 
 .navLink {
-  color: #ffffff; /* Color de texto blanco */
+  color: #ffffff;
   font-weight: 600; 
-  margin-left: 20px; /* Espaciado entre los enlaces */
-  font-size: 16px; /* Tamaño de fuente */
-  transition: color 0.3s ease-in-out; /* Animación suave */
+  margin-left: 20px;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
 }
 
 .navLink:hover {
-  color: #f0a500; /* Color de texto cuando se pasa el ratón */
+  color: #f0a500;
 }
 
 .navLink.active {
-  color: #DCBB7E; /* Color cuando el enlace es activo (página actual) - combinando con paleta dorada */
   font-weight: 700;
 }
 
