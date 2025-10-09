@@ -3,10 +3,15 @@ import CartItem from "../../components/CartItem/CartItem";
 
 //Página que muestra el carrito
 export default function Carrito({ carrito, setCarrito }) {
+  
+  /*Funcion que elimina el producto del carrito. 
+  Recibe id del producto a eliminar y lo actualiza filtrando ese producto*/
   const eliminar = (id) => {
     setCarrito(carrito.filter((item) => item.id !== id));
   };
 
+  /*Recorre el carrito y si encuentra el producto con el id indicado
+  crea una "copia" del objeto cambiando su cantidad */
   const actualizarCantidad = (id, cantidad) => {
     setCarrito(
       carrito.map((item) =>
@@ -15,6 +20,7 @@ export default function Carrito({ carrito, setCarrito }) {
     );
   };
 
+  /* Calcula el total del carrito. Usa reduce para acumular el total */
   const total = carrito.reduce((acc, item) =>  acc + (item.precio * item.cantidad) , 0)
 
   return (

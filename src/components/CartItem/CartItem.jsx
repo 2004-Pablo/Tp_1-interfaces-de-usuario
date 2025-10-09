@@ -1,6 +1,11 @@
 import React from "react";
 import styles from "./CartItem.module.css";
 
+/* Componente que representa un item dentro del carrito.
+Props:
+- Item(objeto del producto con sus atributos)
+- onDelete (funcion para eliminar el producto del carrito)
+- onUpdate: función que actualiza la cantidad del producto */
 export default function CartItem({ item, onDelete, onUpdate }) {
   return (
     <div className={styles.item}>
