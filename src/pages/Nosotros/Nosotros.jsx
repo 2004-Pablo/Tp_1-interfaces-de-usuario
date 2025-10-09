@@ -19,10 +19,20 @@ const Nosotros = () => {
       <p className="lead text-center mb-5">
         Descubre la historia detrás de nuestro café artesanal y la pasión que nos mueve cada día.
       </p>
+      <h3>📖 ¿Por qué Luna & Granos Café?</h3>
+          <p>
+            Durante muchas noches al finalizar una larga jornada de trabajo o estudio, la compañía 
+            de un rico café bajo la luz de la luna nos brindó una cálida sensación de comodidad.
+            Esta sensación tan reconfortante nos hizo querer compartir esto con ustedes, un lugar en 
+            donde cada uno pueda sentirse parte, donde cada uno sea libre de venir a trabajar o 
+            estudiar con sus dispositivos desde aca, así como también reunirse informalmente 
+            y desconectarse del mundo por un rato acompañado de un simple y agradable café. 
+            Acá en Luna & Granos Café
+          </p>
 
       <div className="row mb-5">
         <div className="col-md-6 mb-4">
-          <h3>🌙 Nuestra Historia</h3>
+          <h3>🌙 Nuestra misión</h3>
           <p>
             Luna & Granos Café nació en 2020 con un sueño simple pero poderoso: crear un espacio donde 
             el café excepcional se encuentre con momentos memorables. Fundada por amantes del café con 

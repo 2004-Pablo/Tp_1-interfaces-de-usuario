@@ -2,11 +2,6 @@
   padding: 10px 0;
 }
 
-.navLinks {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .navLink {
   color: #ffffff;
   font-weight: 600; 
