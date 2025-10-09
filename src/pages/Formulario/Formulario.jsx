@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, FormLabel, Form, FormControl, FormGroup } from "react-bootstrap";
 import styles from "./Formulario.module.css";
 
-
 export default function Formulario() {
 
   const [form, setForm] = useState({nombre: "", mail: "", dia: "", hora: "", mensaje: ""})
@@ -19,8 +18,20 @@ export default function Formulario() {
       setValido(false)
       return
     }
+    const nombreRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/
+    if (!nombreRegex.test(form.nombre)) {
+      setError("El nombre solo puede contener letras y espacios.")
+      setValido(false)
+      return
+    }
     if (!form.mail.trim()){
       setError("El email es obligatorio.")
+      setValido(false)
+      return
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(form.mail)) {
+      setError("El email no tiene un formato válido.")
       setValido(false)
       return
     }
@@ -41,6 +52,7 @@ export default function Formulario() {
     }
     setError("")
     setValido(true)
+    setTimeout(() => setValido(false), 2000)
     setForm({ nombre: "", mail: "", dia: "", hora: "", mensaje: "" }) 
   }
 
@@ -77,7 +89,7 @@ export default function Formulario() {
         <FormLabel className={styles.label}>Email</FormLabel>
         <FormControl
           className={styles.input}
-          type="email"
+          type="text"
           name="mail"
           placeholder="tu@email.com"
           value={form.mail}
