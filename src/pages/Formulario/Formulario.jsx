@@ -4,63 +4,79 @@ import styles from "./Formulario.module.css";
 
 export default function Formulario() {
 
+  // Estado que guarda los valores ingresados en cada campo del formulario.
   const [form, setForm] = useState({nombre: "", mail: "", dia: "", hora: "", mensaje: ""})
 
+  // Estado para guardar el mensaje de error (si falta o hay algo incorrecto).
   const [error, setError] = useState("")
 
+  // Estado que indica si el formulario fue enviado correctamente.
   const [valido, setValido] = useState(false)
 
+  // Función que se ejecuta cuando el usuario envía el formulario.
   const handleSubmit = (e) =>{
-    e.preventDefault();
+    e.preventDefault(); // Evita que la página se recargue al enviar el formulario.
     
+    // Validación: el nombre no puede estar vacío.
     if (!form.nombre.trim()){
-      setError("El nombre es obligatorio.")
-      setValido(false)
-      return
+      setError("El nombre es obligatorio.");
+      setValido(false);
+      return;
     }
-    const nombreRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/
+    // Validación: el nombre no puede tener números ni símbolos.
+    const nombreRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
     if (!nombreRegex.test(form.nombre)) {
-      setError("El nombre solo puede contener letras y espacios.")
-      setValido(false)
-      return
+      setError("El nombre solo puede contener letras y espacios.");
+      setValido(false);
+      return;
     }
+    // Validación: el correo electrónico no puede estar vacío.
     if (!form.mail.trim()){
-      setError("El email es obligatorio.")
-      setValido(false)
-      return
+      setError("El email es obligatorio.");
+      setValido(false);
+      return;
     }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    // Validación: el formato del email debe ser válido (por ejemplo: usuario@dominio.com).
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.mail)) {
-      setError("El email no tiene un formato válido.")
-      setValido(false)
-      return
+      setError("El email no tiene un formato válido.");
+      setValido(false);
+      return;
     }
+    // Validación: el campo de fecha no puede estar vacío.
     if (form.dia == ""){
-      setError("La fecha es obligatoria.")
-      setValido(false)
-      return
+      setError("La fecha es obligatoria.");
+      setValido(false);
+      return;
     }
+    // Validación: el campo de hora no puede estar vacío.
     if (form.hora == ""){
-      setError("La hora es obligatoria.")
-      setValido(false)
-      return
+      setError("La hora es obligatoria.");
+      setValido(false);
+      return;
     }
+    // Validación: el mensaje no puede estar vacío.
     if (!form.mensaje.trim()){
-      setError("Los detalles de la reserva son obligatorios.")
-      setValido(false)
-      return
+      setError("Los detalles de la reserva son obligatorios.");
+      setValido(false);
+      return;
     }
-    setError("")
-    setValido(true)
-    setTimeout(() => setValido(false), 2000)
-    setForm({ nombre: "", mail: "", dia: "", hora: "", mensaje: "" }) 
+    setError(""); // Si todas las validaciones pasaron, limpiamos errores anteriores.
+
+    setValido(true); // Marcamos el formulario como válido (enviado correctamente).
+
+    setTimeout(() => setValido(false), 2000); // Ocultamos el mensaje de éxito automáticamente después de 2 segundos.
+
+    setForm({ nombre: "", mail: "", dia: "", hora: "", mensaje: "" }); // Reiniciamos los campos del formulario
   }
 
+  // Función que actualiza los valores del formulario cada vez que el usuario escribe.
   const handleFormInput = (e) => {
-    const { name, value } = e.target
-    setForm({...form, [name] : value })
+    const { name, value } = e.target; // Obtenemos el nombre del campo y su valor.
+    setForm({...form, [name] : value }); // Actualizamos el estado manteniendo los demás valores.
   }
 
+  // Estructura visual del formulario (HTML con clases de Bootstrap y CSS personalizado).
   return (
   <div className={styles.formContainer}>
     <h1 className={styles.formTitle}>Contacto y Reservas</h1>
