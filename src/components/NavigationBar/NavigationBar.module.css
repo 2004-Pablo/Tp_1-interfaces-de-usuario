@@ -1,0 +1,26 @@
+/* NavigationBar.module.css */
+.navbar {
+  /*background-color: #2e3b4e;*/ /* Color de fondo oscuro */
+  padding: 10px 0; /* Espaciado vertical */
+}
+
+.navLinks {
+  display: flex;
+  justify-content: flex-end; /* Alinear los enlaces a la derecha */
+}
+
+.navLink {
+  color: #ffffff; /* Color de texto blanco */
+  font-weight: 600; 
+  margin-left: 20px; /* Espaciado entre los enlaces */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: color 0.3s ease-in-out; /* Animación suave */
+}
+
+.navLink:hover {
+  color: #f0a500; /* Color de texto cuando se pasa el ratón */
+}
+
+.navLink.active {
+  color: #f0a500; /* Color cuando el enlace es activo (página actual) */
+}
