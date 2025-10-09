@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 
-export default function Carta({ onAdd }) {
+export default function Carta({ onAdd }) { //onAdd: Prop
 
   //Declaración inicial de los productos como un array de objetos
   const [productos, setProductos] = useState([
@@ -19,9 +19,10 @@ export default function Carta({ onAdd }) {
     { id: 12, nombre: "Medialuna", precio: 750, img: "/medialuna.jpg", categoria: "Dulces" },
   ]);
 
+  //Hook para manejar el Estado del filtro de los productos
   const [filtro, setFiltro] = useState("Todos");
 
-  //Operador ternario
+  //Operador ternario para asignar el valor a productosFiltrados segun el filtro
   const productosFiltrados = 
     filtro === "Todos" //Condicion
     ? productos //valorSiVerdadero
@@ -41,15 +42,17 @@ export default function Carta({ onAdd }) {
       </div>
 
       <div className="row g-4">
-        {productosFiltrados.map((p) => ( //map para hacer que cada elemento de productos, se convierta en un componente ProductCard
+        {/*map para hacer que cada elemento de productosFiltrados, se convierta en un componente ProductCard*/}
+        {productosFiltrados.map((p) => ( 
            <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={p.id}>
             {/*key es una propiedad especial de React que ayuda a identificar de manera 
             única cada elemento dentro de una lista renderizada de componentes, 
             en este caso la que se genera con el map(), lo cual permite que React
-            identifique que elementos cambiaron, se agregaron o eliminaron se manera eficiente*/ }
+            identifique qué elementos cambiaron, se agregaron o eliminaron, de una manera eficiente*/ }
             <ProductCard //Uso el componente reutilizable ProductCard ya creado 
-              producto={p} //Creo el prop producto, siendo dicha prop todo el objeto p, para todos los elementos p del array
-              onAdd={onAdd} //Creo el prop onAdd, que cada vez que se utiliza llama a la función onAdd recibida desde App
+              producto={p} //Crea el prop producto, siendo dicha prop todo el objeto p, para todos los elementos p del array
+              onAdd={onAdd} //Crea el prop onAdd, que cada vez que se utiliza llama a la función onAdd 
+              //recibida desde App (agregarAlCarrito)
             />
           </div>           
         ))}
@@ -57,4 +60,3 @@ export default function Carta({ onAdd }) {
     </div>
   );
 }
-
