@@ -28,6 +28,13 @@ export default function Carrito({ carrito, setCarrito }) {
       ) : (
         <>
           <div className="mb-4">
+            <div className="d-grid mb-3 p-2 bg-light rounded" style={{gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr', gap: '1rem'}}>
+              <strong>Producto</strong>
+              <strong className="text-center">Precio</strong>
+              <strong className="text-center">Cantidad</strong>
+              <strong className="text-center">Subtotal</strong>
+              <strong className="text-center">Acción</strong>
+            </div>
             {carrito.map((item) => (
               <CartItem
                 key={item.id}

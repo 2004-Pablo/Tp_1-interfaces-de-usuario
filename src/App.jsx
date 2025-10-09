@@ -31,16 +31,18 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-amber-50">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/carta" element={<Carta onAdd={agregarAlCarrito} />} />
-        <Route path="/carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
-        <Route path="/formulario" element={<Formulario />} />
-        <Route path="/nosotros" element={<Nosotros/>} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+    <div className="min-h-screen bg-amber-50" style={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+      <Header carrito={carrito} />
+      <main style={{flex: '1'}}>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/carta" element={<Carta onAdd={agregarAlCarrito} />} />
+          <Route path="/carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
+          <Route path="/formulario" element={<Formulario />} />
+          <Route path="/nosotros" element={<Nosotros/>} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );

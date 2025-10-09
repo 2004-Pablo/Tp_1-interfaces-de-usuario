@@ -1,14 +1,62 @@
-.aboutUsContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px;
-    border: 1px solid #000;
-    border-radius: 12px;
-    margin: 50px auto;
-    width: 80%;
-    text-align: center;
-    background: linear-gradient(135deg, #6b3e26 0%, #a26232 100%);
-    color: #fff;
+.aboutUsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f4e6 0%, #fff5e1 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    color: #3a2210;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.aboutUsContainer.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.valuesList {
+    list-style: none;
+    padding-left: 0;
+}
+
+.valuesList li {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(220, 187, 126, 0.1);
+    border-left: 4px solid #DCBB7E;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+}
+
+.valuesList li:hover {
+    transform: translateX(5px);
+    background: rgba(220, 187, 126, 0.2);
+}
+
+.featureCard {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #DCBB7E;
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.featureCard h4 {
+    color: #3a2210;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.featureCard p {
+    color: #666;
+    line-height: 1.6;
 }

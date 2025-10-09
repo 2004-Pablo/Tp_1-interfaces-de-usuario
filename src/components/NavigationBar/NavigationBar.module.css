@@ -22,5 +22,11 @@
 }
 
 .navLink.active {
-  color: #f0a500; /* Color cuando el enlace es activo (página actual) */
+  color: #DCBB7E; /* Color cuando el enlace es activo (página actual) - combinando con paleta dorada */
+  font-weight: 700;
+}
+
+.badge {
+  margin-left: 5px;
+  font-size: 0.8rem;
 }

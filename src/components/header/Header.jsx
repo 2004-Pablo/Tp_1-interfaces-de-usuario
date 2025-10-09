@@ -3,11 +3,11 @@ import NavigationBar from "../NavigationBar/NavigationBar.jsx"
 import styles from "./Header.module.css"
 import Logo from "../Logo/Logo.jsx"
 
-function Header() {
+function Header({ carrito }) {
   return (
     <header className={styles.headerContainer}>
       <Logo />
-      <NavigationBar />
+      <NavigationBar carrito={carrito} />
     </header>
   )
 }
