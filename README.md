@@ -5,10 +5,9 @@ Este proyecto es un **frontend** desarrollado en **React** para una **Cafeteria*
 
 ## 🚀 Funcionalidades
 
-- **Catálogo de productos**: Lista de productos con detalles clave.
-- **Detalle del producto**: Información completa de un producto seleccionado.
+- **Catálogo de productos**: Lista de productos con sus respectivos precios.
 - **Navegación intuitiva**: Sistema de rutas para moverse entre las secciones.
-- **Estilos responsivos**: Implementados con frameworks CSS para adaptarse a dispositivos móviles y de escritorio.
+- **Estilos responsivos**: Implementados para adaptarse a dispositivos móviles y de escritorio.
 
 ---
 
@@ -25,8 +24,8 @@ Este proyecto es un **frontend** desarrollado en **React** para una **Cafeteria*
 
 Antes de ejecutar la aplicación, asegúrate de tener instalado:
 
-- **Node.js** (versión 16 o superior).
-- **npm** o **yarn** para la gestión de paquetes.
+- **Node.js**.
+- **npm** para la gestión de paquetes.
 
 ---
 
@@ -54,6 +53,6 @@ Antes de ejecutar la aplicación, asegúrate de tener instalado:
 
 
 ## 🧑‍💻 Autores
-**Desarrollado por: Pablo Cortese, Lautaro Díaz Blas, Marcos Bejarano, Matías López, Fernando Folcher**
+**Desarrollado por: Pablo Cortese, Lautaro Díaz, Marcos Bejarano, Matías López, Fernando Folcher**
 
 Desarrollado como parte de un trabajo práctico universitario.
